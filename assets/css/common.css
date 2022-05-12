@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  position: relative;
+  background-color: #E5E5E5;
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 5rem;
+  min-height: calc(100vh - 5rem);
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+  margin: 0px;
+}
+
+.d-inline {
+  display: inline;
+}
+
+nav {
+  background-color: #FFFFFF;
+  padding: 0.5rem;
+}
+
+.f-right {
+  float: right;
+}
+
+.f-left {
+  float: left;
+}
+
+.nav-button {
+  background-color: #FFFFFF;
+  border: 1px solid #FCA311;
+  border-radius: 5px;
+  padding: 0.25rem 1rem 0.25rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: all 0.25s;
+}
+
+.nav-button:hover {
+  background-color: #FCA311;
+  color: #FFFFFF;
+}
+
+.logo-img {
+  height: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  vertical-align: top;
+}
+
+.ml-1 {
+  margin-left: 1rem;
+}
+
+.ml-5 {
+  margin-left: 5rem;
+}
+
+.ml-10 {
+  margin-left: 10rem;
+}
+
+.mr-1 {
+  margin-right: 1rem;
+}
+
+.mr-5 {
+  margin-right: 5rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-5 {
+  margin-top: 5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.color-yellow {
+  color: #FCA311;
+}
+
+.card {
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.footer-image {
+  height: 1.5rem;
+}
+
+footer {
+  background-color: #FFFFFF;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0px;
+  width: calc(100% - 2rem);
+}
