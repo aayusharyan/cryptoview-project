@@ -1,6 +1,7 @@
 .flex-container {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .main-img {
@@ -16,4 +17,8 @@
 
 .space-around {
   justify-content: space-around;
+}
+
+#coin-description {
+  text-align: justify;
 }
