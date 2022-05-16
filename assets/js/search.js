@@ -27,6 +27,9 @@ function render(data) {
 
 function createSingleCard(index, logo, name, symbol, coinId) {
   const id_elem = document.createElement('p');
+  if(index < 10) {
+    index = index + "&nbsp;&nbsp;";
+  }
   id_elem.innerHTML = index;
 
   const logo_elem = document.createElement('img');
