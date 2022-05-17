@@ -12,10 +12,13 @@ function loadDetail() {
   .then(convertToJSON)
   .then(render);
 
+  fetch(`https://api.coingecko.com/api/v3/coins/${params.get('id')}/market_chart?vs_currency=inr&days=1&interval=hourly`)
+  .then(convertToJSON)
+  .then(renderChart);
 }
 
 function render(data) {
-  const name = `${data.name} (${data.symbol})`;
+  const name = `${data.name} (${data.symbol.toUpperCase()})`;
   const description = data.description.en;
   const logo = data.image.large;
 
@@ -37,4 +40,50 @@ function render(data) {
 
 window.onload = function() {
   loadDetail();
+}
+
+function renderChart(data) {
+  const prices = data.prices;
+
+  const timesstamps = [];
+  const prices_inr = [];
+
+  for(let i = 0; i < prices.length; i++) {
+    const single_price = prices[i];
+
+    const date_obj = new Date(single_price[0]);
+    let hours = date_obj.getHours();
+    if(hours < 10) {
+      hours = "0" + hours;
+    }
+    let minutes = date_obj.getMinutes();
+    if(minutes < 10) {
+      minutes = "0" + minutes;
+    }
+
+    timesstamps.push(`${hours}:${minutes}`);
+    prices_inr.push(single_price[1]);
+  }
+
+
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: timesstamps,
+      datasets: [{
+        label: 'Price (in INR)',
+        data: prices_inr,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.4,
+      }]
+    },
+    options: {
+      plugins: {
+        legend: {
+          display: false,
+        }
+      }
+    }
+  });
 }

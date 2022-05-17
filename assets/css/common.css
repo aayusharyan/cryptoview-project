@@ -110,3 +110,7 @@ footer {
   bottom: 0px;
   width: calc(100% - 2rem);
 }
+
+#main-title {
+  cursor: pointer;
+}
