@@ -59,20 +59,6 @@ function createSingleCard(index, logo, name, symbol, coinId) {
 }
 
 
-
-/*
-
-
-<div class=" card">
-        </div>
-
-        */
-
-
-
-
-
-
 window.onload = function() {
   searchData();
 }

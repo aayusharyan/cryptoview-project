@@ -5,7 +5,7 @@ function loadDetail() {
   const params = new URLSearchParams(url_obj.search);
 
   if(!params.has('id')) {
-    window.location.href = "/";
+    window.location.href = "./index.html";
   }
 
   fetch(`https://api.coingecko.com/api/v3/coins/${params.get('id')}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false`)
